@@ -17,7 +17,7 @@ public final class  Util  {
         private Util() {
         }
 
-        public static Connection open() throws SQLException {
+        public static Connection openConnection() throws SQLException {
 
                 return DriverManager.getConnection(
                         PropertiesUtil.get(URL_KEY),
@@ -30,7 +30,7 @@ public final class  Util  {
             try {
                 Class.forName("org.postgresql.Driver");
             } catch (ClassNotFoundException e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
             }
         }
     }

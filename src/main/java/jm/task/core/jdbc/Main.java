@@ -8,18 +8,17 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        UserService us = new UserServiceImpl();
-        us.createUsersTable();
-        us.saveUser("Алексей", "Кудряшов",(byte) 24);
-        us.saveUser("Дмитрий", "Шаповалов",(byte) 27);
-        us.saveUser("Дмитрий", "Беляков",(byte) 29);
-        us.saveUser("Михаил", "Латыпов",(byte) 39);
-        List<User> list = us.getAllUsers();
-        for (User user : list) {
-            System.out.println(user);
+        UserService user = new UserServiceImpl();
+        user.createUsersTable();
+        user.saveUser("Алексей", "Кудряшов",(byte) 24);
+        user.saveUser("Дмитрий", "Шаповалов",(byte) 27);
+        user.saveUser("Дмитрий", "Беляков",(byte) 29);
+        user.saveUser("Михаил", "Латыпов",(byte) 39);
+        List<User> list = user.getAllUsers();
+        for (User users : list) {
+            System.out.println(users);
         }
-        us.removeUserById(3);
-        us.cleanUsersTable();
-        us.dropUsersTable();
+        user.cleanUsersTable();
+        user.dropUsersTable();
     }
 }
